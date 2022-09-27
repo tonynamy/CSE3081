@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import enum
 import math
 import random
@@ -18,6 +20,19 @@ class Heap:
     class AdjustDirection(enum.Enum):
         UP = enum.auto()
         DOWN = enum.auto
+
+    def __init__(self, is_max=True):
+        self.is_max = is_max
+
+    @classmethod
+    def from_array(cls, arr: typing.List[Number], is_max=True) -> Heap:
+
+        h = Heap(is_max=is_max)
+
+        for e in arr:
+            h.push(e)
+
+        return h
 
     @property
     def size(self) -> int:
@@ -103,13 +118,29 @@ class Heap:
 
 if __name__ == "__main__":
 
-    heap = Heap()
-
-    SIZE = 100
+    SIZE = 10
     RANGE = 100
 
-    for _ in range(SIZE):
-        heap.push(random.randint(-RANGE, RANGE))
+    numbers = []
 
     for _ in range(SIZE):
-        print(heap.pop())
+        numbers.append(random.randint(-RANGE, RANGE))
+
+    heap = Heap.from_array(numbers, is_max=False)
+
+    heap_numbers = []
+
+    for _ in range(heap.size):
+        heap_numbers.append(heap.pop())
+
+    sorted_numbers = sorted(numbers)
+
+    is_accurate = heap_numbers == sorted_numbers
+
+    print(heap_numbers)
+
+    if is_accurate:
+        print("accurate")
+    else:
+        print("inaccurate")
+        print("should be :", sorted_numbers)
