@@ -1,0 +1,4 @@
+^^^ Sorting method = INSERTION_SORT, Test file = ENTIRELY_RANDOM_32.binary, Result =  1
+^^^ Sorting method = HEAP_SORT, Test file = ENTIRELY_RANDOM_32.binary, Result =  1
+^^^ Sorting method = QUICK_SORT, Test file = ENTIRELY_RANDOM_32.binary, Result =  1
+^^^ Sorting method = QUICK_SORT_OPT, Test file = ENTIRELY_RANDOM_32.binary, Result =  1
