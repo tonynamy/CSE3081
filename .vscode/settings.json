@@ -69,6 +69,7 @@
     "fstream": "cpp",
     "stack": "cpp",
     "filesystem": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "functional": "cpp"
   }
 }
